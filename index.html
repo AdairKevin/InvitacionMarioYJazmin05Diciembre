@@ -1,8 +1,8 @@
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>InvitacionModerna</title>
+    <title>Boda Mario & Jazmín</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/layout.css" />
@@ -11,7 +11,15 @@
   </head>
 
   <body class="center">
-    <div class="content">
+    <!-- SOBRE DE BIENVENIDA -->
+    <div class="envelope-screen" id="envelopeScreen">
+      <div class="envelope">
+        <div class="envelope-flap"></div>
+        <div class="wax-seal" id="openEnvelope">M&amp;J</div>
+      </div>
+    </div>
+
+    <div class="content invitation-content hidden" id="invitationContent">
       <section class="section-home">
         <div class="home-title center">
           <img src="./assets/img/rings-1.svg" alt="rings" />
@@ -19,33 +27,20 @@
         </div>
         <div class="home-content">
           <img class="home-img" alt="photo" src="./assets/img/portada.jpg" />
-          <div class="box-audio">
-            <div class="container">
-              <div class="row">
-                <div class="play-music">
-                  <div id="music-animation" class="music-animation">
-                    <span class="bar bar1"></span>
-                    <span class="bar bar2"></span>
-                    <span class="bar bar3"></span>
-                    <span class="bar bar4"></span>
-                    <span class="bar bar5"></span>
-                  </div>
-                  <div class="music-toggle">
-                    <a
-                      onClick="togglePlay()"
-                      id="toggle"
-                      data-text-swap="Music on"
-                      >Music off</a
-                    >
-                  </div>
-                </div>
-              </div>
+
+          <div class="music-card">
+            <div class="song-title">Only You</div>
+            <div class="artist-name">Elvis Presley</div>
+            <button class="play-button" id="playPauseBtn">▶</button>
+            <div class="progress-container">
+              <div class="progress" id="progressBar"></div>
             </div>
-            <audio id="music" autoplay="autoplay" loop="loop">
+            <audio id="music" loop>
               <source src="./assets/music.mp3" type="audio/mpeg" />
               Tu navegador no soporta el elemento
             </audio>
           </div>
+
           <div class="home-txt">
             <b>BIENVENIDOS</b>
             <p>
@@ -65,7 +60,7 @@
         </div>
         <div class="box-info">
           <div class="info-primary">
-            <h1>David & Gabriela</h1>
+            <h1>Mario & Jazmín</h1>
             <p>
               Con nuestro Amor, con la presencia de Dios entre nosotros y la
               Bendición de nuestros padres
@@ -75,15 +70,15 @@
             <div class="info-content">
               <b>Padres del novio</b>
               <ul>
-                <li>Hugo Reisancho Ruiz</li>
-                <li>Yolanda Palma Anchundia</li>
+                <li>Inés Bautista Barranco</li>
+                <li>Mario Eduardo Serrano Rodríguez</li>
               </ul>
             </div>
             <div class="info-content">
               <b>Padres de la novia</b>
               <ul>
-                <li>Bolívar Peralta Ávila</li>
-                <li>Elizabeth Potes Párraga</li>
+                <li>Maribel Govea</li>
+                <li>✝ Armando Sánchez de la Barquera Vázquez</li>
               </ul>
             </div>
           </div>
@@ -98,9 +93,9 @@
             <div class="date-box">
               <h2>SÁBADO</h2>
               <ul class="center">
-                <li>SEPT</li>
-                <li>21</li>
-                <li>18:00</li>
+                <li>DIC</li>
+                <li>05</li>
+                <li>14:00</li>
               </ul>
             </div>
             <ul class="date-time">
@@ -129,7 +124,7 @@
         <h3>Reserva la Fecha</h3>
 
         <div class="calendar">
-          <div class="calendar-header">Septiembre 2026</div>
+          <div class="calendar-header">Diciembre 2026</div>
 
           <div class="calendar-days">
             <span>D</span>
@@ -149,7 +144,7 @@
             <span>2</span>
             <span>3</span>
             <span>4</span>
-            <span>5</span>
+            <span class="active">5</span>
 
             <span>6</span>
             <span>7</span>
@@ -167,7 +162,7 @@
             <span>18</span>
             <span>19</span>
             <span>20</span>
-            <span class="active">21</span>
+            <span>21</span>
             <span>22</span>
             <span>23</span>
             <span>24</span>
@@ -178,15 +173,16 @@
             <span>28</span>
             <span>29</span>
             <span>30</span>
+            <span>31</span>
           </div>
         </div>
 
         <a
           class="calendar-btn"
-          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Nuestra+Boda&dates=20260919T180000/20260919T230000&details=Te+esperamos+para+celebrar+nuestro+gran+día.&location=Salón+de+Eventos+Las+Orquídeas"
+          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Mario+y+Jazm%C3%ADn&dates=20261205T140000/20261206T020000&details=Te+esperamos+para+celebrar+nuestro+gran+d%C3%ADa.&location=Catedral+de+San+Juan+Diego,+Valle+de+Chalco"
           target="_blank"
         >
-          <img src="./assets/img/calendar.svg" alt="" />
+          <span aria-hidden="true">📅</span>
           Agregar a mi calendario
         </a>
       </div>
@@ -203,10 +199,16 @@
             <img width="75" src="./assets/img/church.svg" alt="church" />
             <div class="place-txt">
               <h2>Ceremonia</h2>
-              <p>Iglesia del Carmen - Pt 12 entre norte 36 y 37</p>
+              <p><b>2:00 PM</b> Catedral de San Juan Diego, Valle de Chalco</p>
             </div>
           </div>
-          <a class="place-btn" href="" target="_blank"> VER UBICACIÓN </a>
+          <a
+            class="place-btn"
+            href="https://www.google.com/maps/search/?api=1&query=Catedral+de+San+Juan+Diego+Valle+de+Chalco"
+            target="_blank"
+          >
+            VER UBICACIÓN
+          </a>
         </div>
       </section>
 
@@ -217,19 +219,27 @@
         </div>
         <div class="box-place-salon">
           <div class="place-info center">
-            <img width="105" src="./assets/img/copa.png" alt="church" />
+            <img width="105" src="./assets/img/copa.png" alt="copa" />
             <div class="place-txt">
-              <h2>Salón de Eventos</h2>
+              <h2>Recepción</h2>
               <p>
-                Las Orquideas - Av. Soto y Gama col Del Carmen, entre Pt 12 y Pt
-                13
+                <b>4:00 PM</b> Pt 17 Mz 96 Lt 21, entre Sur 21 y 22, Xico 4ta
+                Sección
               </p>
             </div>
           </div>
-          <a class="place-btn" href="" target="_blank"> VER UBICACIÓN </a>
+          <!-- PENDIENTE: confirmar link exacto de Google Maps -->
+          <a
+            class="place-btn"
+            href="https://www.google.com/maps/search/?api=1&query=Poniente+17+Manzana+96+Lote+21+Xico+4ta+Seccion+Valle+de+Chalco"
+            target="_blank"
+          >
+            VER UBICACIÓN
+          </a>
         </div>
       </section>
 
+      <!-- PENDIENTE: fotos del álbum (F1-F5 en assets/img) -->
       <section class="section-slider">
         <div class="slider-photo">
           <figure>
@@ -255,6 +265,10 @@
             Con profundo cariño y gratitud, agradecemos a nuestros padrinos por
             acompañarnos y ser parte esencial de este día tan especial.
           </p>
+          <ul class="padrinos-list">
+            <li>Laura Santos Ramírez</li>
+            <li>Everardo Miguel Jiménez</li>
+          </ul>
         </div>
       </section>
 
@@ -270,7 +284,7 @@
 
         <div class="timeline">
           <div class="timeline-item">
-            <div class="timeline-hour">5:30 PM</div>
+            <div class="timeline-hour">2:00 PM</div>
 
             <div class="timeline-card">
               <img src="./assets/img/church.svg" alt="" />
@@ -283,50 +297,13 @@
           </div>
 
           <div class="timeline-item">
-            <div class="timeline-hour">7:00 PM</div>
+            <div class="timeline-hour">4:00 PM</div>
 
             <div class="timeline-card">
               <img src="./assets/img/copa.png" alt="" />
               <h3>Recepción</h3>
               <p>
                 Los esperamos para celebrar juntos este momento tan especial.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-hour">8:00 PM</div>
-
-            <div class="timeline-card">
-              <img src="./assets/img/food.svg" alt="" />
-              <h3>Cena</h3>
-              <p>
-                Disfrutemos una deliciosa velada en compañía de familiares y
-                amigos.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-hour">9:00 PM</div>
-
-            <div class="timeline-card">
-              <img src="./assets/img/music.svg" alt="" />
-              <h3>Baile</h3>
-              <p>
-                Es momento de celebrar, bailar y crear recuerdos inolvidables.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-hour">11:30 PM</div>
-
-            <div class="timeline-card">
-              <img src="./assets/img/cake.svg" alt="" />
-              <h3>Pastel</h3>
-              <p>
-                Compartamos juntos uno de los momentos más dulces de la noche.
               </p>
             </div>
           </div>
@@ -339,8 +316,9 @@
           <div class="clothes-txt">
             <h2>Vestimenta</h2>
             <p>
-              La vestimenta es formal, pensada para que disfrutes de esta noche
-              especial con elegancia y libertad de movimiento.
+              Estilo libre. Te pedimos no usar blanco ni sus derivados (plata,
+              hueso, crema, etc.). Si es de tu agrado, lleva un sombrero
+              vaquero 🤠
             </p>
           </div>
         </div>
@@ -351,7 +329,10 @@
           <img width="60" src="./assets/img/envelope.svg" alt="envelope" />
           <div class="envelope-txt"></div>
           <h2>Mesa de regalos</h2>
-          <p>Para su comodidad, recibiremos el obsequio en sobre cerrado.</p>
+          <p>
+            Tu presencia es el mejor regalo, pero si deseas acompañarla con un
+            detalle, será muy apreciado.
+          </p>
         </div>
       </section>
 
@@ -366,6 +347,7 @@
             merecen ser compartidos
           </p>
           <b>¡Gracias por acompañarnos!</b>
+          <!-- PENDIENTE: link de confirmación (WhatsApp/formulario) -->
           <button class="confirmar">
             <a href="#"> Confirmar asistencia </a>
           </button>

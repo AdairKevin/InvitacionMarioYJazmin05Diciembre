@@ -4,7 +4,7 @@ const second = 1000,
   hour = minute * 60,
   day = hour * 24;
 
-let countDown = new Date("Sep 21, 2025 18:00:10").getTime(),
+let countDown = new Date("Dec 5, 2026 14:00:00").getTime(),
   x = setInterval(function () {
     let now = new Date().getTime(),
       distance = countDown - now;
@@ -40,38 +40,39 @@ if (segundos == 0) {
 }
 
 /* music */
-var music = document.getElementById("music");
-var isPlaying = false;
+const music = document.getElementById("music");
+const playPauseBtn = document.getElementById("playPauseBtn");
+const progressBar = document.getElementById("progressBar");
 music.volume = 0.5;
 
-function togglePlay() {
-  if (isPlaying) {
-    music.pause();
-  } else {
+playPauseBtn.addEventListener("click", () => {
+  if (music.paused) {
     music.play();
+  } else {
+    music.pause();
   }
-}
+});
 
-music.onplaying = function () {
-  isPlaying = true;
-  document.getElementById("music-animation").classList.add("on");
-};
-music.onpause = function () {
-  isPlaying = false;
-  document.getElementById("music-animation").classList.remove("on");
-};
+music.addEventListener("play", () => (playPauseBtn.textContent = "⏸"));
+music.addEventListener("pause", () => (playPauseBtn.textContent = "▶"));
 
-var button = document.getElementById("toggle");
+music.addEventListener("timeupdate", () => {
+  const progress = (music.currentTime / music.duration) * 100;
+  progressBar.style.width = progress + "%";
+});
 
-button.addEventListener(
-  "click",
-  function () {
-    if (button.getAttribute("data-text-swap") == button.innerHTML) {
-      button.innerHTML = button.getAttribute("data-text-original");
-    } else {
-      button.setAttribute("data-text-original", button.innerHTML);
-      button.innerHTML = button.getAttribute("data-text-swap");
-    }
-  },
-  false
-);
+/* sobre */
+const openBtn = document.getElementById("openEnvelope");
+const envelope = document.querySelector(".envelope");
+const screen = document.getElementById("envelopeScreen");
+const invitation = document.getElementById("invitationContent");
+
+openBtn.addEventListener("click", () => {
+  envelope.classList.add("open");
+  music.play();
+
+  setTimeout(() => {
+    screen.classList.add("fade-out");
+    invitation.classList.remove("hidden");
+  }, 1200);
+});
