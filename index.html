@@ -26,20 +26,11 @@
           <h1>Nuestra Boda</h1>
         </div>
         <div class="home-content">
-          <img class="home-img" alt="Mario y Jazmín" src="./assets/img/foto (1).jpeg" />
-
-          <div class="music-card">
-            <div class="song-title">Only You</div>
-            <div class="artist-name">Elvis Presley</div>
-            <button class="play-button" id="playPauseBtn">▶</button>
-            <div class="progress-container">
-              <div class="progress" id="progressBar"></div>
-            </div>
-            <audio id="music" loop>
-              <source src="./assets/music.mp3" type="audio/mpeg" />
-              Tu navegador no soporta el elemento
-            </audio>
-          </div>
+          <img
+            class="home-img"
+            alt="Mario y Jazmín"
+            src="./assets/img/foto (3).jpeg"
+          />
 
           <div class="home-txt">
             <b>BIENVENIDOS</b>
@@ -49,6 +40,22 @@
               de nuestra historia y celebrar juntos el inicio de esta nueva
               etapa.
             </p>
+          </div>
+
+          <div class="music-card">
+            <div class="song-title">Only You</div>
+            <div class="artist-name">Elvis Presley</div>
+            <button class="play-button" id="playPauseBtn">▶</button>
+            <div class="progress-container">
+              <div class="progress" id="progressBar"></div>
+            </div>
+            <audio id="music" loop>
+              <source
+                src="./assets/Elvis Presley---Only You.mp3"
+                type="audio/mpeg"
+              />
+              Tu navegador no soporta el elemento
+            </audio>
           </div>
         </div>
       </section>
@@ -242,10 +249,26 @@
       <section class="section-slider">
         <div class="slider-photo">
           <figure class="slider-track" id="sliderTrack">
-            <img class="img" src="./assets/img/foto (1).jpeg" alt="Mario y Jazmín" />
-            <img class="img" src="./assets/img/foto (2).jpeg" alt="Mario y Jazmín" />
-            <img class="img" src="./assets/img/foto (3).jpeg" alt="Mario y Jazmín" />
-            <img class="img" src="./assets/img/foto (4).jpeg" alt="Mario y Jazmín" />
+            <img
+              class="img"
+              src="./assets/img/foto (1).jpeg"
+              alt="Mario y Jazmín"
+            />
+            <img
+              class="img"
+              src="./assets/img/foto (2).jpeg"
+              alt="Mario y Jazmín"
+            />
+            <img
+              class="img"
+              src="./assets/img/foto (3).jpeg"
+              alt="Mario y Jazmín"
+            />
+            <img
+              class="img"
+              src="./assets/img/foto (4).jpeg"
+              alt="Mario y Jazmín"
+            />
           </figure>
         </div>
         <div class="slider-txt">
@@ -314,10 +337,10 @@
           <div class="clothes-txt">
             <h2>Vestimenta</h2>
             <p>
-              El código de vestimenta es de estilo libre; luce como más te
-              guste y te sientas cómodo para disfrutar de la celebración. Con
-              cariño te pedimos evitar el blanco y sus derivados (plata, hueso,
-              crema), reservados para la novia. Y si es de tu agrado, acompaña tu
+              El código de vestimenta es de estilo libre; luce como más te guste
+              y te sientas cómodo para disfrutar de la celebración. Con cariño
+              te pedimos evitar el blanco y sus derivados (plata, hueso, crema),
+              reservados para la novia. Y si es de tu agrado, acompaña tu
               atuendo con un sombrero vaquero 🤠
             </p>
           </div>
@@ -353,7 +376,12 @@
             data-evento="la boda de Mario y Jazmín"
           >
             <h3>Confirma tu asistencia</h3>
-            <input name="nombre" type="text" placeholder="Nombre completo" required />
+            <input
+              name="nombre"
+              type="text"
+              placeholder="Nombre completo"
+              required
+            />
             <input
               name="personas"
               type="number"
@@ -366,7 +394,9 @@
               rows="3"
               placeholder="Deja un mensaje para los novios (opcional)"
             ></textarea>
-            <button type="submit" class="rsvp-btn">Confirmar por WhatsApp</button>
+            <button type="submit" class="rsvp-btn">
+              Confirmar por WhatsApp
+            </button>
           </form>
         </div>
       </section>
