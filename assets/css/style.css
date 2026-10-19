@@ -1044,39 +1044,53 @@ footer a {
   pointer-events: none;
 }
 
+/* La solapa lleva sombra y un tono más oscuro para que se distinga del sobre */
 .envelope-flap {
   position: absolute;
   inset: 0;
-  clip-path: polygon(0 0, 100% 0, 50% 50%);
   transform-origin: top;
   transition: transform 1s ease;
   z-index: 3;
+  filter: drop-shadow(0 6px 6px rgba(0, 0, 0, 0.45));
 }
 
 .envelope-flap::after {
   content: "";
   position: absolute;
   inset: 0;
-  clip-path: polygon(0 0, 100% 0, 50% 50%);
-  background: url("../img/sobre.png") center / cover;
+  clip-path: polygon(0 0, 100% 0, 50% 55%);
+  background:
+    linear-gradient(180deg, rgba(120, 90, 50, 0.08), rgba(80, 55, 25, 0.28)),
+    url("../img/sobre.png") center / cover;
+  border-radius: 10px 10px 0 0;
 }
 
+/* Sello de cera rojo */
 .wax-seal {
   position: absolute;
-  bottom: 80px;
+  top: 55%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #f6e27a, #c9a44c 60%, #8c6a26);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transform: translate(-50%, -50%);
+  width: 78px;
+  height: 78px;
+  border-radius: 46% 54% 50% 50% / 52% 48% 52% 48%;
+  background: radial-gradient(
+    circle at 35% 30%,
+    #d8424a 0%,
+    #a3141c 45%,
+    #6e0a10 100%
+  );
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 5px rgba(110, 10, 16, 0.55),
+    inset 0 3px 6px rgba(255, 255, 255, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-great-vibes);
-  font-size: 1.6rem;
-  color: var(--azul-marino);
+  font-size: 1.7rem;
+  color: var(--bg-dorado-1);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   z-index: 4;
 }
@@ -1175,4 +1189,96 @@ footer a {
   font-size: 2.4rem;
   line-height: 1;
   margin-bottom: 15px;
+}
+
+/* -----------------------
+   CALENDARIO: alinear números con los días
+--------------------------*/
+.calendar-days {
+  padding: 15px 15px 8px;
+  column-gap: 10px;
+}
+
+/* -----------------------
+   GALERÍA (slider con fotos <img>)
+--------------------------*/
+.slider-photo {
+  overflow: hidden;
+}
+
+.slider-photo figure.slider-track {
+  display: flex;
+  width: 100%;
+  left: 0;
+  animation: none;
+  transition: transform 0.9s ease;
+}
+
+.slider-photo figure.slider-track .img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: center;
+  float: none;
+}
+
+/* -----------------------
+   CONFIRMACIÓN POR WHATSAPP
+--------------------------*/
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 380px;
+  margin: 1.5rem auto 0;
+  padding: 1.5rem 1.2rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--bg-dorado-2);
+  border-radius: 14px;
+}
+
+.rsvp-form h3 {
+  margin: 0 0 4px;
+  font-family: var(--font-great-vibes);
+  font-weight: 400;
+  font-size: 2rem;
+  color: var(--bg-dorado-1);
+  text-align: center;
+}
+
+.rsvp-form input,
+.rsvp-form textarea {
+  font-family: var(--font-PT-serif);
+  font-size: 1rem;
+  padding: 12px 14px;
+  border: 1px solid var(--bg-dorado-2);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--txt-body);
+  resize: vertical;
+}
+
+.rsvp-btn {
+  margin-top: 4px;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  background: var(--bg-gradient);
+  color: var(--txt-body);
+  font-family: var(--font-PT-serif);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Los círculos de los días no deben ser más anchos que su columna */
+.calendar-dates span {
+  width: 100%;
+  max-width: 36px;
+  height: auto;
+  aspect-ratio: 1;
 }
